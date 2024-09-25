@@ -26,7 +26,7 @@ A imagem fornecida ilustra a estrutura do projeto, que pode ser resumida nos seg
 #### Como Executar
 1. Clone o Repositório:
 ```
-git clone https://seu-repositorio.git
+git clone https://github.com/emersonamorim-dev/Datalake-Dashboard-Python.git
 ```
 
 2. Crie o Ambiente Virtual e Instale as Dependências:
