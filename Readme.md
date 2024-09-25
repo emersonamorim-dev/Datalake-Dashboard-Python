@@ -51,7 +51,7 @@ Edite o arquivo com seu Usuário e Senha
 data_extraction.py
 ```
 
-#### Usuário e senha
+#### Usuário e senha da Meteomatics
 username = 'SeuUsuario'  
 password = 'SuaSenha'  
 
