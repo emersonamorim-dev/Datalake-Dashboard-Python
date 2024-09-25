@@ -8,11 +8,11 @@ check_status() {
     fi
 }
 
-# Executar o script de extração de dados
+# Executa o script de extração de dados
 echo "Executando extração de dados..."
 python3 scripts/data_extraction.py
 check_status "extração de dados"
 
 
-# Exibir URLs para acesso aos serviços
+# Exibe URLs para acesso aos serviços
 echo "Aplicação iniciada! Acesse o dashboard em http://localhost:8501 e o Airflow em http://localhost:8080"
