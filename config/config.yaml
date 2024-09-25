@@ -1,0 +1,8 @@
+# config.yaml
+
+# Configurações da API Meteomatics
+meteomatics:
+  username: seu_usuario_meteomatics
+  password: sua_senha_meteomatics
+  base_url: https://api.meteomatics.com
+

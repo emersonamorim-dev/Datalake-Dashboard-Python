@@ -1,0 +1,37 @@
+# Apache Airflow para orquestração de tarefas
+apache-airflow==2.5.0
+SQLAlchemy==1.4.40
+pendulum==2.1.2
+flask-session
+
+apache-airflow-providers-mongo==2.3.0
+apache-airflow-providers-http==4.0.0
+
+# FastAPI para API rápida e eficiente
+fastapi==0.100.0
+uvicorn==0.23.0  # Servidor ASGI para FastAPI
+
+# Conexão com MongoDB (ajustada)
+pymongo==3.12.3
+
+# Apache Spark para processamento distribuído
+pyspark==3.5.0
+
+# Pandas para manipulação de dados
+pandas==2.1.0
+
+# Requests para realizar chamadas HTTP à API do Meteomatics
+requests==2.31.0
+
+# Streamlit para o dashboard
+streamlit==1.26.0
+
+# PyYAML para manipular arquivos de configuração em YAML
+pyyaml==6.0
+
+# Conexão com PostgreSQL (necessário para Airflow)
+psycopg2-binary==2.9.7
+
+# Dependências adicionais
+numpy==1.25.2
+plotly==5.15.0

@@ -1,0 +1,89 @@
+version: "3.8"
+
+services:
+  # Serviço PostgreSQL para o backend do Airflow
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - hadoop
+
+  # Serviço MongoDB para armazenar dados meteorológicos
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: seulogin
+      MONGO_INITDB_ROOT_PASSWORD: suasenha
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - hadoop
+
+  # Serviço Airflow Webserver
+  airflow-webserver:
+    image: apache/airflow:2.8.0
+    container_name: airflow-webserver
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__FERNET_KEY=OQQtRPifvymeKx8K_K2d48sKlDMslQaszZTyD-xirPM=
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__WEBSERVER__RBAC=True  # Habilitar RBAC
+      - _AIRFLOW_WWW_USER_CREATE=true  # Criar usuário
+      - _AIRFLOW_WWW_USER_USERNAME=seulogin  # Definir o nome de usuário
+      - _AIRFLOW_WWW_USER_PASSWORD=suasenha  # Definir a senha
+      - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.www.auth.backends.password_auth  # Habilitar autenticação com senha
+    ports:
+      - "8085:8080"
+    command: bash -c "airflow db init && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email emerson_tecno@hotmail.com && airflow webserver"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - airflow_logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./scripts:/opt/airflow/scripts  # Certifique-se de que os scripts sejam montados
+    networks:
+      - hadoop
+    restart: always
+
+  # Serviço Airflow Scheduler
+  airflow-scheduler:
+    image: apache/airflow:2.8.0
+    container_name: airflow-scheduler
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__FERNET_KEY=OQQtRPifvymeKx8K_K2d48sKlDMslQaszZTyD-xirPM=
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=True
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - airflow_logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./scripts:/opt/airflow/scripts 
+    networks:
+      - hadoop
+    depends_on:
+      - postgres
+      - airflow-webserver
+    command: bash -c "sleep 20 && airflow scheduler"
+    restart: always
+
+networks:
+  hadoop:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mongo_data:
+  airflow_logs:
