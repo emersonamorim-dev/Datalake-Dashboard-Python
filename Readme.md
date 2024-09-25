@@ -128,11 +128,13 @@ docker-compose restart airflow-webserver airflow-scheduler
 
 - Acessar o Containar via Root para instalar pacotes:
 
-- Listar Containar Ativos
+- Listar Container Ativos
 ```
 docker ps
 
 ```
+
+- Entrar dentro do Container via Root
 ```
 docker exec -it --user root seuIDcontainer bash
 ```
