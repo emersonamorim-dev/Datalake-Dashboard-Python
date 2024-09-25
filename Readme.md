@@ -4,7 +4,8 @@ Codificação em Python com Streamlit para projeto implementa um Datalake para c
 ##### Arquitetura da Aplicação
 A imagem fornecida ilustra a estrutura do projeto, que pode ser resumida nos seguintes componentes principais:
 
-![]([https://raw.githubusercontent.com/emersonamorim-dev/Datalake-Dashboard-Python/diagrama/main/Arquitetura-Modular.png](https://github.com/emersonamorim-dev/Datalake-Dashboard-Python/blob/main/diagrama/Arquitetura-Modular.png))
+![](https://raw.githubusercontent.com/emersonamorim-dev/Datalake-Dashboard-Python/diagrama/main/Arquitetura-Modular.png)
+
 
 - Configuração: Arquivos YAML centralizam parâmetros e credenciais para acesso à API da Meteomatics e outras configurações gerais.
 - Ambiente Virtual (venv): Isola as dependências do projeto, garantindo reprodutibilidade.
