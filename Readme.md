@@ -63,6 +63,12 @@ password = 'SuaSenha'
 chmod +x ./run_dashboard.sh
 ```
 
+- Comando para instalar o GeoPandas
+```
+pip install geopandas
+```
+
+- Comando para rodar aplicação
 ```
 ./run_dashboard.sh
 ```
