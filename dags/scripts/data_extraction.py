@@ -8,8 +8,8 @@ def extract_meteomatics_data():
     api_url_base = 'https://api.meteomatics.com'
     
     # Usuário e senha inseridos diretamente
-    username = 'httpsgithub_amorim_emerson'  
-    password = 'MsW0esUL33'  
+    username = 'seu_usuario'  
+    password = 'sua_senha'  
     
     # Período de tempo de interesse 
     start_date = "2024-09-24"
