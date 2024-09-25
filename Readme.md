@@ -58,6 +58,11 @@ password = 'SuaSenha'
 
 #### Rode o Comando abaixo para extrair os Dados da Meteomatics
 
+- Comando para permissão
+```
+chmod +x ./run_dashboard.sh
+```
+
 ```
 ./run_dashboard.sh
 ```
