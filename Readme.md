@@ -29,6 +29,10 @@ A imagem fornecida ilustra a estrutura do projeto, que pode ser resumida nos seg
 git clone https://github.com/emersonamorim-dev/Datalake-Dashboard-Python.git
 ```
 
+```
+cd Datalake-Dashboard-Python
+```
+
 2. Crie o Ambiente Virtual e Instale as Dependências:
 
 ```
