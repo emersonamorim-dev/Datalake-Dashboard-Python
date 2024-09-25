@@ -51,7 +51,7 @@ Edite o arquivo com seu Usuário e Senha
 data_extraction.py
 ```
 
-# Usuário e senha
+#### Usuário e senha
 username = 'SeuUsuario'  
 password = 'SuaSenha'  
 
@@ -66,7 +66,7 @@ Isso vai gerar um Arquivo data.json no diretório: data/raw/processed/data.json 
 Meteomatics.
 Lembrando o código data_extraction.py está configurado para acessar os dados até a seguinte datas:
 
-# Período de tempo de interesse 
+##### Período de tempo de interesse 
 start_date = "2024-09-24"
 end_date = "2024-10-05"
 
