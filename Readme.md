@@ -1,10 +1,10 @@
-#### Datalake Dashboard Python - Minsait com Meteomatics - FIAP 🚀 🔄 🌐
+### Datalake Dashboard Python - Minsait com Meteomatics - FIAP 🚀 🔄 🌐
 Codificação em Python com Streamlit para projeto implementa um Datalake para coleta, processamento e armazenamento de dados meteorológicos utilizando a API da Meteomatics, usado Python com FastAPI e diversas ferramentas para orquestração, automação e visualização.
 
 ##### Arquitetura da Aplicação
 A imagem fornecida ilustra a estrutura do projeto, que pode ser resumida nos seguintes componentes principais:
 
-![](https://raw.githubusercontent.com/emersonamorim-dev/Datalake-Dashboard-Python/diagrama/main/Arquitetura-Modular.png)
+![](https://raw.githubusercontent.com/emersonamorim-dev/Datalake-Dashboard-Python/refs/heads/main/diagrama/Arquitetura-Modular.png)
 
 
 - Configuração: Arquivos YAML centralizam parâmetros e credenciais para acesso à API da Meteomatics e outras configurações gerais.
