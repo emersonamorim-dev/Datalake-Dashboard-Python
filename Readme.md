@@ -105,7 +105,7 @@ http://localhost:8503
 docker-compose up -d
 ```
 
-#### Comandos caso queira entrar dentro Container do Apache Airflor
+#### Comandos caso queira entrar dentro Container do Apache Airflow
 ```
 docker exec -it airflow-webserver bash
 ```
